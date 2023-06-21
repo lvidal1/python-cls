@@ -146,7 +146,7 @@ const webpackBase = {
     port: 8080,
     contentBase: `${__dirname}/../../backend/challenge/static`,
     historyApiFallback: true,
-    disableHostCh eck: true,
+    disableHostCheck: true,
   },
 }
 
