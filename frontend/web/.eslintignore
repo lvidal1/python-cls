@@ -1,0 +1,8 @@
+**/*{.,-}min.js
+**/*{.,-}min.js
+**/storybook/**/*.js
+coverage/
+**/build/
+**/lib/
+**/node_modules/**
+storybook-static/**

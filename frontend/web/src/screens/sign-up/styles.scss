@@ -1,0 +1,52 @@
+.container {
+    @include container();
+    width: 100%;
+  }
+  
+  .leftContainer {
+    background-image: url('../../images/login-background.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: none;
+    overflow: hidden;
+    width: 10%;
+  
+    .backgroundImage {
+      min-height: 100%;
+      min-width: 100%;
+      object-fit: cover;
+    }
+  
+    @media (min-width: $tablet) {
+      display: flex;
+    }
+  }
+  
+  .rightContainer {
+    align-items: center;
+    flex: 1;
+    justify-content: center;
+  
+    .formContainer {
+      padding: $spacer;
+      width: calc(100% - $spacer * 2);
+  
+      .title {
+        font-size: $titleFont;
+        margin: $vertical 0 $spacer 0;
+      }
+  
+      .description {
+        margin-bottom: $vertical2x;
+      }
+  
+      @media (min-width: $tablet) {
+        width: 80%;
+      }
+    }
+  
+    @media (min-width: $tablet) {
+      display: flex;
+    }
+  }
+          

@@ -1,0 +1,33 @@
+.loginInputs {
+  margin-bottom: $vertical;
+}
+
+.loginInputRow {
+  margin: $vertical auto;
+  position: relative;
+  width: 100%;
+
+  &:last-of-type {
+    height: calc(#{$vertical2x} + 10px);
+  }
+}
+
+.buttons {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  
+  .loginButton {
+    margin-top: $vertical;
+    height: $buttonHeight;
+    margin-bottom: $vertical;
+    width: 100%;
+  }
+
+  .forgetButton {
+    background: none;
+    color: $grey;
+    line-height: 0;
+    min-width: 0;
+  }
+}

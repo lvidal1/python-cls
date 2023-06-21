@@ -1,0 +1,45 @@
+.singUpInput {
+  display: flex;
+  margin: $spacer auto;
+  position: relative;
+  width: 100%;
+}
+
+.singUpRow {
+  display: flex;
+  flex-direction: column;
+  gap: $spacer;
+  margin: $spacer auto;
+  position: relative;
+  width: 100%;
+
+  span {
+    bottom: -14px;
+    line-height: 16px;
+  }
+
+  & > div {
+    width: 100%;
+
+    @media (min-width: $tablet) {
+      width: 30%;
+    }
+  }
+
+  @media (min-width: $tablet) {
+    flex-direction: row;
+    margin: $vertical auto;
+  }
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: $vertical2x;
+
+  .btn {
+    height: $buttonHeight;
+    margin-bottom: $vertical;
+    width: auto;
+  }
+}

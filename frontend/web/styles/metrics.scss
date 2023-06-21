@@ -1,0 +1,70 @@
+// Responsive
+$mobile: 375px;
+$mobileMin: 374px;
+$tablet: 768px;
+$tabletMin: 767px;
+$desktop: 1440px;
+$desktopMin: 1439px;
+$desktopHeight: 1024px;
+$mobileHeight: 667px;
+$maxDesktopContainer: 1240px;
+
+// Padding / Margin
+$smallestSpacer: 5px;
+$spacer: 15px;
+$vertical: 30px;
+$vertical2x: 60px;
+$horizontal: 40px;
+$horizontal2x: 80px;
+
+// Height
+$iconHeight: 16px;
+$inputHeight: 38px;
+$buttonHeight: 32px;
+$slimButtonHeight: 24px;
+
+// Width
+$buttonWidthMobile: 100px;
+$buttonWidth: 120px;
+$inputWidthTablet: 180px;
+$inputWidthDesktop: 200px;
+$inputWidth: 253px;
+
+// Layout
+$headerHeight: 70px;
+$headerPadding: 18px;
+$headerTotalHeight: $headerHeight + ($headerPadding * 2) + 1px;
+
+@mixin buttonWidth() {
+  min-width: $buttonWidthMobile;
+  @media (min-width: $tabletMin) {
+    min-width: $buttonWidth;
+  }
+}
+
+@mixin inputWidth() {
+  min-width: $inputWidth;
+  @media (min-width: $tabletMin) {
+    min-width: $inputWidthTablet;
+  }
+  @media (min-width: $desktopMin) {
+    min-width: $inputWidthDesktop;
+  }
+}
+
+// Fonts
+$smallestFont: 10px;
+$standardFont: 14px;
+$titleFont: 20px;
+$subtitleFont: 12px;
+$standardLineHeight: 20px;
+
+
+:export {
+  inputHeight: $inputHeight;
+  slimButtonHeight: $slimButtonHeight;
+  smallestFont: $smallestFont;
+  smallestSpacer: $smallestSpacer;
+  spacer: $spacer;
+  standardFont: $standardFont;
+}

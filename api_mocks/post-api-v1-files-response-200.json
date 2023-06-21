@@ -1,0 +1,13 @@
+{
+    "data": {
+        "id": 1,
+        "put_key": {
+            "fields": {
+                "AWSAccessKeyId": "TESTAWSACCESSKEY",
+                "key": "1-1568238282-test.jpg",
+                "signature": "testsignature="
+            },
+            "url": "https://testurl.com/"
+        }
+    }
+}

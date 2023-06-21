@@ -1,0 +1,17 @@
+{
+    "presets": [
+        ["@babel/preset-env", { "shippedProposals": true }],
+        "@babel/react",
+        "@emotion/babel-preset-css-prop",
+    ],
+
+    "plugins": [
+        ["react-hot-loader/babel"],
+        ["@babel/plugin-proposal-class-properties", { "loose": false }],
+        "@babel/plugin-proposal-json-strings",
+        ["@babel/transform-runtime"],
+        ["@babel/plugin-syntax-optional-chaining"],
+        "babel-plugin-emotion",
+        "@babel/plugin-transform-modules-commonjs"
+    ],
+}

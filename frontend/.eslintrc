@@ -1,0 +1,82 @@
+{
+  "extends": [
+    "airbnb",
+    "prettier",
+    "prettier/react",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended"
+  ],
+  "env": {
+    "mocha": true,
+    "node": true,
+    "jest": true,
+    "jasmine": true,
+    "browser": true
+  },
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["react", "babel", "@typescript-eslint", "simple-import-sort"],
+  "rules": {
+    "class-methods-use-this": 1,
+    "camelcase": "off",
+    "import/no-cycle": "off",
+    "import/no-named-as-default": "off",
+    "jsx-a11y/href-no-hash": "off",
+    "jsx-a11y/anchor-is-valid": [
+      "error",
+      {
+        "components": ["Link"],
+        "specialLink": ["to"]
+      }
+    ],
+    "jsx-a11y/label-has-for": [
+      2,
+      {
+        "components": ["Label"],
+        "required": {
+          "some": ["nesting", "id"]
+        },
+        "allowChildren": false
+      }
+    ],
+    "semi": 0,
+    "max-len": [1, 200],
+    "max-lines": ["error", 400],
+    "max-lines-per-function": ["error", 100],
+    "global-require": 0,
+    "no-underscore-dangle": ["off"],
+    "react/jsx-filename-extension": ["off"],
+    "react/no-unescaped-entities": ["off"],
+    "react/require-default-props": [2, { "forbidDefaultForRequired": false }],
+    "react/default-props-match-prop-types": [2, { "allowRequiredDefaults": true }],
+    "no-plusplus": ["error", { "allowForLoopAfterthoughts": true }],
+    "react/prefer-stateless-function": ["off"],
+    "import/prefer-default-export":["off"],
+    "simple-import-sort/sort": "error",
+    "sort-imports": "off",
+    "import/order": "off",
+    "@typescript-eslint/no-var-requires": 0,
+    "@typescript-eslint/no-empty-function": 0,
+    "@typescript-eslint/ban-ts-comment": 1,
+    "@typescript-eslint/no-explicit-any": 0,
+    "@typescript-eslint/explicit-module-boundary-types": 0,
+    "import/no-unresolved": 1,
+    "import/extensions": 0,
+    "no-unused-vars": 2,
+    "object-curly-spacing": ["error", "always"],
+    "array-bracket-spacing": ["error", "never"],
+    "computed-property-spacing": ["error", "always"],
+    "comma-dangle": ["error", {
+      "arrays": "always",
+      "objects": "always",
+      "imports": "always",
+      "exports": "always",
+      "functions": "never"
+    }]
+  },
+  "globals": {
+    "__DEV__": true,
+    "expect": true,
+    "window": true,
+    "__DEBUG__": true
+  }
+}

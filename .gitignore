@@ -1,0 +1,35 @@
+# OSX
+.DS_Store
+
+# Editors
+*.sublime-project
+*.sublime-workspace
+.vscode/settings.json
+
+#  Javascript
+node_modules
+coverage
+yarn-error.log
+jsconfig.json
+package-lock.json
+/.nyc_output
+/assets/build.min.js
+storybook-static
+.cache
+lib
+
+# Snapshots
+**/__snapshots__/**
+**/.loki/**
+.reg
+
+# Python
+*.py[co]
+backend/challenge/static/build
+*/__pycache__
+.mypy_cache
+
+# terraform
+terraform.tfstate*
+.terraform
+*.secret.tfvars

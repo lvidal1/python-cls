@@ -1,0 +1,57 @@
+{
+  "name": "@clearsummit/carabiners",
+  "version": "0.0.2",
+  "description": "Helpers and Utilities",
+  "author": "Corey <corey@clearsumm.it>",
+  "homepage": "https://github.com/clearsummit/django-react-starter/packages/carabiners#readme",
+  "license": "MIT",
+  "main": "lib",
+  "types": "lib/index",
+  "directories": {
+    "test": "__tests__",
+    "lib": "lib"
+  },
+  "files": [
+    "lib"
+  ],
+  "publishConfig": {
+    "registry": "https://registry.yarnpkg.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/clearsummit/django-react-starter.git"
+  },
+  "scripts": {
+    "build": "rm -rf ./lib/ && tsc",
+    "watch": "tsc -w",
+    "prepublish": "yarn build",
+    "lint": "eslint --ext .ts,.tsx,.js,.jsx",
+    "lint:fix": "eslint --fix --ext .ts,.tsx,.js,.jsx",
+    "test": "jest -u"
+  },
+  "bugs": {
+    "url": "https://github.com/clearsummit/django-react-starter/issues"
+  },
+  "dependencies": {
+    "@babel/core": "^7.1.2",
+    "@babel/plugin-proposal-class-properties": "^7.5.5",
+    "@babel/plugin-proposal-json-strings": "^7.2.0",
+    "@babel/plugin-proposal-optional-chaining": "^7.6.0",
+    "@babel/plugin-transform-runtime": "^7.6.2",
+    "@babel/preset-env": "^7.6.2",
+    "@babel/preset-typescript": "^7.10.4",
+    "@babel/runtime": "^7.6.2",
+    "@types/react-dom": "^16.9.8",
+    "@types/react-router": "^5.1.8",
+    "@types/react-router-dom": "^5.1.5",
+    "lodash": "^4.17.11",
+    "moment": "^2.22.2",
+    "ts-loader": "^7.0.5",
+    "typescript": "^3.9.6",
+    "uuid": "^3.3.3"
+  },
+  "gitHead": "ab5ac2fb7a47a635b840954fc7e62b9facfdd3d7",
+  "devDependencies": {
+    "@babel/cli": "^7.7.0"
+  }
+}

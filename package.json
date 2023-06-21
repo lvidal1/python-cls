@@ -1,0 +1,46 @@
+{
+  "name": "root",
+  "private": true,
+  "workspaces": [
+    "frontend/web",
+    "frontend/models",
+    "frontend/packages/*"
+  ],
+  "scripts": {
+    "build:packages": "yarn workspace @clearsummit/radio-dispatch run build && yarn workspace @clearsummit/carabiners run build && yarn workspace @clearsummit/external-frame run build && yarn workspace @challenge/models run build && yarn workspace @challenge/models run build",
+    "prepare": "yarn build:packages",
+    "start": "yarn workspace challenge start",
+    "start:dev": "yarn workspace challenge start:dev",
+    "storybook:app": "yarn workspace challenge run storybook",
+    "storybook:comp": "yarn workspace @clearsummit/external-frame run storybook",
+    "prettier": "prettier --list-different './**/*.{scss,json,js,jsx,ts,tsx}'",
+    "prettier:fix": "prettier --write './**/*.{scss,json,js,jsx,ts,tsx}'",
+    "lint": "yarn workspaces run lint",
+    "lint:fix": "yarn workspaces run lint:fix",
+    "test": "yarn workspaces run test",
+    "scss-lint": "yarn workspaces run scss-lint",
+    "coverage": "yarn workspace @clearsummit/radio-dispatch run test --coverage && yarn workspace @clearsummit/carabiners run test --coverage && yarn workspace @clearsummit/external-frame run test --coverage && yarn workspace challenge run test --coverage"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@types/enzyme": "^3.10.8",
+    "@typescript-eslint/eslint-plugin": "^3.1.0",
+    "@typescript-eslint/parser": "^3.1.0",
+    "babel-eslint": "^10.0.1",
+    "enzyme-adapter-react-16": "^1.15.6",
+    "eslint": "^7.9.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-config-prettier": "^3.3.0",
+    "eslint-import-resolver-webpack": "^0.10.1",
+    "eslint-plugin-babel": "^5.2.1",
+    "eslint-plugin-import": "^2.18.0",
+    "eslint-plugin-jsx-a11y": "^6.1.2",
+    "eslint-plugin-react": "^7.14.3",
+    "eslint-plugin-simple-import-sort": "^5.0.3",
+    "husky": "^3.0.5",
+    "prettier": "^1.14.3",
+    "ts-jest": "^26.3.0",
+    "ts-loader": "^7.0.5",
+    "typescript": "^4.0.2"
+  }
+}

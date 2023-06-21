@@ -1,0 +1,61 @@
+---
+version: "2"
+checks:
+  identical-code:
+    config:
+      threshold: 40
+  similar-code:
+    config:
+      threshold: 75
+  file-lines:
+    config:
+      threshold: 400
+  method-lines:
+    config:
+      threshold: 50
+plugins:
+  duplication:
+    enabled: true
+    config:
+      languages:
+        - javascript
+        - python
+      count_threshold: 3
+  eslint:
+    enabled: true
+    checks:
+      comma-dangle:
+        enabled: false
+    config:
+      config: .codeclimate.eslintrc
+  fixme:
+    enabled: true
+  radon:
+    enabled: true
+  nodesecurity:
+    enabled: true
+  sass-lint:
+    enabled: true
+exclude_patterns:
+- .storybook/
+- node_modules/
+- "**/**/migrations/*"
+- "**/**/manage.py"
+- "**/**/settings.py"
+- "api_mocks/*"
+- "frontend/stories/*"
+- "frontend/__tests__/*"
+- "frontend/__mocks__/*"
+- "packages/**/__tests__/*"
+- "packages/**/stories/*"
+- ".vscode/*"
+- ".*"
+- "Pip*"
+- "Docker*"
+- "**.md"
+- "*.ini"
+- "**/static/images/**"
+- "**/fonts/*"
+- "deploy-storybook.sh"
+- "docker-compose.yml"
+- "yarn.lock"

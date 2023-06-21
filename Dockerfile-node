@@ -1,0 +1,21 @@
+FROM node:12
+
+RUN apt-get update && apt-get install apt-transport-https
+
+# Install yarn
+RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - && \
+    echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
+
+RUN apt-get update && apt-get --yes --force-yes install yarn
+
+WORKDIR /app
+COPY frontend /app/frontend
+COPY package.json /app/package.json
+COPY yarn.lock /app/yarn.lock
+COPY tsconfig.json /app/tsconfig.json
+RUN yarn
+
+
+EXPOSE 8080
+
+CMD ["yarn", "start"]

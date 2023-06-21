@@ -1,0 +1,13 @@
+{
+    "presets": [
+        ["@babel/preset-env", { "shippedProposals": true }],
+        "@babel/preset-typescript"
+    ],
+
+    "plugins": [
+        ["@babel/plugin-proposal-class-properties", { "loose": true }],
+        "@babel/plugin-proposal-json-strings",
+        ["@babel/plugin-proposal-optional-chaining"],
+        "@babel/plugin-transform-runtime"
+    ]
+}

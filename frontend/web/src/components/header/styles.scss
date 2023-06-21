@@ -1,0 +1,37 @@
+$headerHeight: 18px;
+$headerPadding: 18px;
+
+.header {
+  background-color: $white;
+  box-shadow: 0 -1px 0 #e6eaee;
+  flex: 0 0 $headerHeight;
+  flex-direction: row;
+  padding: $headerPadding;
+  display:flex;
+  height: $headerTotalHeight;
+}
+
+.title {
+  display:flex;
+  flex-direction: row;
+  flex: 1;
+  align-items: center;
+  * {
+    margin: 0 $spacer;
+  }
+}
+
+.buttons {
+  display:flex;
+  flex: 1;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  * {
+    margin: 0 $spacer;
+  }
+}
+
+.logo {
+  height: 50px;
+}

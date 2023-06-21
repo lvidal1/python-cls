@@ -1,0 +1,18 @@
+.appContainer {
+  display: flex;
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+  width: 100%;
+}
+
+.main {
+  @include column;
+  flex: 1 0 100%;
+}
+
+.content {
+  @include column;
+  @include container;
+  background-color: $lightGrey;
+}

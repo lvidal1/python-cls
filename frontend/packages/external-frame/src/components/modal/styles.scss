@@ -1,0 +1,142 @@
+@import '../../../styles/variables';
+
+.modalFormWrapper {
+  @include row();
+
+  align-items: center;
+  justify-content: center;
+
+  header {
+    margin: 0 auto;
+    text-align: center;
+
+    img {
+      height: auto;
+      width: $inputWidth;
+    }
+  }
+
+  .formDescription {
+    font-size: $standardFont;
+    line-height: normal;
+    margin: 0 auto;
+    padding-top: $vertical;
+  }
+
+  form {
+    margin: $spacer 0;
+    width: 100%;
+
+    .inputRow {
+      position: relative;
+      width: 100%;
+
+      &:last-of-type {
+        margin-bottom: $vertical2x;
+      }
+    }
+
+    button {
+      margin: $spacer auto 0;
+    }
+  }
+
+  p {
+    font-size: $smallestFont;
+    font-weight: normal;
+    line-height: normal;
+    text-align: center;
+  }
+}
+
+.innerFormWrap {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.defaultFormWrapper {
+  margin: $vertical2x auto;
+  max-width: 360px;
+
+  form {
+    margin: $spacer 0;
+  }
+
+  .inputRow {
+    margin: $vertical auto;
+  }
+}
+
+.secondaryLink {
+  font-size: $smallestFont;
+  margin: 0 auto $spacer;
+  text-align: center;
+}
+
+.errorContainer {
+  left: 50%;
+  position: absolute;
+  top: $inputHeight;
+  transform: translateX(-50%);
+
+  z-index: 1;
+}
+
+.headerText,
+.headerTextSmall {
+  margin: 0;
+}
+
+.headerText {
+  font-size: $standardFont;
+}
+
+.headerTextSmall {
+  font-size: $smallestFont;
+}
+
+.resetPasswordHeader {
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.modalContainer {
+  align-items: center;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  width: 100%;
+}
+
+.flexColumn {
+  flex-direction: column;
+}
+
+.footNotesContainer {
+  margin: $spacer auto;
+}
+
+.noLineBreak {
+  color: inherit;
+  font-size: inherit;
+  white-space: pre;
+}
+
+.success {
+  color: $grey;
+  font-size: $smallestFont;
+  position: absolute;
+}
+
+.inputRow {
+  margin: $vertical auto;
+  position: relative;
+  width: 100%;
+
+  &:last-of-type {
+    height: calc(#{$vertical2x} + 10px);
+    margin-bottom: $vertical2x;
+  }
+}

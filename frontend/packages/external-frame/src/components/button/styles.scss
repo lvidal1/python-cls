@@ -1,0 +1,48 @@
+@import '../../../styles/variables';
+
+button {
+  &:focus {
+    outline: none;
+  }
+}
+
+.button {
+  @include buttonWidth();
+  @include growOnHover();
+  align-items: center;
+  background-color: $primary;
+  border: 0;
+  border-radius: 5px;
+  color: $white;
+  display: flex;
+  font-family: 'Lato';
+  justify-content: center;
+  padding: 8px;
+  position: relative;
+
+  &:hover {
+    background-color: $white;
+    box-shadow: 0 8px 20px 0 $boxShadowGrey;
+    color: $primary;
+  }
+
+  &:active {
+    background: $white;
+    box-shadow: 0 8px 20px 0 $boxShadowGrey;
+    color: $faintBlue;
+  }
+}
+
+.clickable {
+  background: transparent;
+  border: 0;
+}
+
+.link {
+  color: $white;
+  text-decoration: none;
+
+  &:active {
+    color: $blue;
+  }
+}

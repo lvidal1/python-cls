@@ -1,0 +1,22 @@
+body {
+  font-family: 'Lato';
+}
+
+a {
+  text-decoration: none;
+}
+
+p,
+span {
+  color: $grey;
+  font-size: $standardFont;
+  letter-spacing: 0;
+  line-height: $standardLineHeight;
+  margin: 0;
+}
+
+button {
+  border-color: transparent;
+  cursor: pointer;
+  padding: 0;
+}

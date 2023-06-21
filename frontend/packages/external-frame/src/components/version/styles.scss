@@ -1,0 +1,16 @@
+@import '../../../styles/variables';
+
+.version {
+  background-color: $modalWrapperBackground;
+  border-radius: 5px;
+  padding: 5px;
+  position: fixed;
+  right: 30px;
+  top: calc(100vh - 50px);
+  z-index: 900;
+
+  span {
+    color: $blue;
+    font-size: 15px;
+  }
+}

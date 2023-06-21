@@ -1,0 +1,52 @@
+@mixin container() {
+  margin: auto;
+  max-width: $maxDesktopContainer;
+  padding: 0 $vertical;
+  @media (min-width: $desktopMin) {
+    padding: 0 $vertical2x;
+  }
+}
+
+@mixin grid() {
+  display: flex;
+  flex: 1;
+  flex-basis: 100%;
+  flex-direction: column;
+  flex-grow: 0;
+  flex-shrink: 0;
+}
+
+
+@mixin column {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  height: 100%;
+  overflow-y: auto;
+  padding: 0;
+}
+
+@mixin row() {
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: $vertical2x;
+}
+
+/*
+ * Desktop 3 cols, Tablet 2 cols, mobile 1 col
+ * @include col(100%, 50%, 33%);
+*/
+@mixin col($mobile: 100%, $tablet: 50%, $desktop: 33%, $padding: $horizontal) {
+  flex-basis: $desktop;
+  flex-grow: 0;
+  flex-shrink: 0;
+  @media (min-width: $tabletMin) {
+    flex-basis: calc(50% - (#{$padding} * 2));
+  }
+  @media (min-width: $desktopMin) {
+    flex-basis: calc(33% - (#{$padding} * 2));
+  }
+}

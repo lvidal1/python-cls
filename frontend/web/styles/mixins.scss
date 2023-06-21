@@ -1,0 +1,97 @@
+// @include transition(all,2s,ease-out);
+@mixin transition($what: all, $time: 0.2s, $how: ease-in-out) {
+  transition: $what $time $how;
+}
+
+@mixin growOnHover($amount: 1.02) {
+  @include transition();
+
+  &:hover {
+    transform: scale($amount);
+  }
+}
+
+@mixin container() {
+  display: flex;
+  flex-direction: row;
+  height: calc(100vh - #{$headerTotalHeight - 36px});
+  padding: 0;
+}
+
+@mixin sidebarContainer() {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+
+  @media (min-width: $tablet) {
+    min-width: 400px;
+    width: 30%;
+  }
+}
+
+@mixin formContainer() {
+  width: 80%;
+
+  .title {
+    font-size: $titleFont;
+  }
+
+  .subtitle {
+    color: #828282;
+    font-size: $subtitleFont;
+    line-height: 1.5;
+  }
+
+  @media (min-width: $tablet) {
+    width: 60%;
+  }
+}
+
+@mixin contentContainer($col: 11) {
+  display: none;
+  flex: 1;
+  overflow: hidden;
+
+  @media (min-width: $tablet) {
+    display: flex;
+  }
+}
+
+@mixin backgroundImageContainer($image: '') {
+  @include contentContainer();
+
+  background-image: url('../src/#{$image}');
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  .backgroundImage {
+    min-height: 100%;
+    min-width: 100%;
+    object-fit: cover;
+  }
+}
+
+@mixin buttonsContainer() {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin primaryButton() {
+  background-color: $olive;
+  color: $white;
+  height: $buttonHeight;
+  margin-bottom: $vertical;
+  width: 100%;
+}
+
+@mixin paragraphContainer() {
+  display: flex;
+  justify-content: center;
+
+  p {
+    align-self: flex-end;
+    font-size: $standardFont;
+  }
+}

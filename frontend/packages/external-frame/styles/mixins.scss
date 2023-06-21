@@ -1,0 +1,12 @@
+// @include transition(all,2s,ease-out);
+@mixin transition($what: all, $time: 0.2s, $how: ease-in-out) {
+  transition: $what $time $how;
+}
+
+@mixin growOnHover($amount: 1.02) {
+  @include transition();
+
+  &:hover {
+    transform: scale($amount);
+  }
+}

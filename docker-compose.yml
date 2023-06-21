@@ -1,0 +1,52 @@
+version: '3'
+
+services:
+  postgres:
+    image: postgres:11.12
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./scripts:/scripts
+      - .:/dumps
+    environment:
+      - POSTGRES_PASSWORD=postgres
+  python:
+    build:
+      context: ./
+      dockerfile: Dockerfile-python
+    command: sh -c "pipenv run /opt/app/backend/manage.py migrate && pipenv run /opt/app/backend/manage.py runserver 0.0.0.0:8000"
+    stdin_open: true
+    tty: true
+    volumes:
+      - ./api_mocks:/opt/app/api_mocks
+      - ./backend:/opt/app/backend
+    ports:
+      - "8000:8000"
+    depends_on:
+      - postgres
+    environment:
+      - LC_ALL=C.UTF-8
+      - LANG=C.UTF-8
+      - DOCKER=1
+  node:
+    build:
+      context: ./
+      dockerfile: Dockerfile-node
+    command: ["yarn", "start"]
+    volumes:
+      - ./frontend:/app/frontend
+      - ./tsconfig.json:/app/tsconfig.json
+      - ./backend/challenge/static:/app/backend/challenge/static
+      - ./api_mocks:/app/api_mocks
+      -  /app/node_modules
+      - /app/frontend/web/node_modules
+      - /app/frontend/packages/carabiners/node_modules
+      - /app/frontend/packages/carabiners/lib
+      - /app/frontend/packages/external-frame/node_modules
+      - /app/frontend/packages/external-frame/lib
+      - /app/frontend/packages/radio-dispatch/node_modules
+      - /app/frontend/packages/radio-dispatch/lib
+      - /app/frontend/models/node_modules
+      - /app/frontend/models/lib
+    ports:
+      - "8080:8080"

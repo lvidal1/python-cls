@@ -1,0 +1,9 @@
+{
+  "extends": ["../.eslintrc"],
+  "settings": {
+    "import/resolver": {
+      "webpack": "./webpack.config.js",
+      // "extensions": [".js", ".jsx"]
+    }
+  }
+}

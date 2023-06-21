@@ -1,0 +1,15 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "outDir": "../backend/challenge/static/build",
+  },
+  "include": [
+    "./src/**/*",
+    "./package.json"
+  ],
+  "exclude": [
+    "./src/**/*.spec.*",
+    "./src/**/*.story.*",
+    "./src/**/*.test.*",
+  ],
+}

@@ -1,0 +1,50 @@
+@import '../../../styles/variables';
+
+.radio {
+  input {
+    opacity: 0;
+    position: absolute;
+
+    + .radioLabel {
+      line-height: $iconHeight;
+
+      &:before {
+        border-radius: 100%;
+        content: '';
+        cursor: pointer;
+        display: inline-block;
+        height: $iconHeight;
+        margin-right: 1em;
+        position: relative;
+        text-align: center;
+        transition: all 250ms ease;
+        vertical-align: top;
+        width: $iconHeight;
+      }
+
+      &:empty {
+        &:before {
+          margin-right: 0;
+        }
+      }
+    }
+
+    &:checked {
+      + .radioLabel {
+        &:before {
+          background-color: $blue;
+          box-shadow: inset 0 0 0 4px $white;
+        }
+      }
+    }
+
+    &:focus {
+      + .radioLabel {
+        &:before {
+          border-color: $blue;
+          outline: none;
+        }
+      }
+    }
+  }
+}

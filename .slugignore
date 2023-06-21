@@ -1,0 +1,12 @@
+/.circleci
+/.loki
+/.storybook
+/.vscode
+/coverage
+/frontend
+/storybook-static
+/package.json
+/yarn.lock
+*.png
+*.jpg
+*.jpeg

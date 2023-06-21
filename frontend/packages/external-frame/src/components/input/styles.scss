@@ -1,0 +1,75 @@
+@import '../../../styles/variables';
+
+.inputContainer {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  min-height: $inputHeight;
+  position: relative;
+
+  // sass-lint:disable no-vendor-prefixes
+  ::-webkit-inner-spin-button {
+    display: none;
+  }
+  // sass-lint:enable no-vendor-prefixes
+}
+
+.inputLabel {
+  color: $black;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  @media screen and (max-width: $tablet) {
+    display: none;
+  }
+}
+
+.baseInput {
+  @include inputWidth();
+  @include transition();
+  background: transparent;
+  border-left: 0;
+  border-right: 0;
+  border-top: 0;
+  color: $blue;
+  flex: 1;
+  font-size: $standardFont;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 29px;
+  padding: 1px 0;
+
+  &:hover {
+    border-bottom-color: $lightGrey;
+  }
+
+  &:focus {
+    border: 0;
+    border-bottom-color: $grey;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    outline: none;
+  }
+
+  &::placeholder {
+    color: $grey;
+  }
+}
+
+.error {
+  bottom: -24px;
+  color: $red;
+  font-size: 12px;
+  height: $standardFont;
+  left: 0;
+  position: absolute;
+}
+
+.accessory {
+  background: transparent;
+  height: 17px;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}

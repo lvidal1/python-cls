@@ -1,0 +1,2 @@
+web: cd backend && newrelic-admin run-program gunicorn cookiecutter_repo_name.wsgi:application -b "0.0.0.0:$PORT" -w 3 --pythonpath=challenge -k gevent
+worker: cd backend && celery worker -B --app challenge

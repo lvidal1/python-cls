@@ -1,0 +1,9 @@
+**/*{.,-}min.js
+**/*{.,-}min.js
+**/storybook/**/*.js
+coverage/
+**/__tests__/**/*.js
+**/__mocks__/*.js
+**/build/
+**/lib/
+.*

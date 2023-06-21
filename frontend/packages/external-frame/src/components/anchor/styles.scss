@@ -1,0 +1,19 @@
+@import '../../../styles/variables';
+
+.anchor {
+  @include transition();
+  border-bottom: 2px solid transparent;
+  color: $black;
+  cursor: pointer;
+  font-size: 14px;
+  text-decoration: none;
+
+  &:hover {
+    border-bottom: 2px solid $blue;
+  }
+
+  &:active {
+    border: 0;
+    color: $blue;
+  }
+}

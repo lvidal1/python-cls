@@ -1,0 +1,47 @@
+/* Standard */
+$primary: rgb(62, 86, 245);
+$secondary: rgb(255, 169, 89);
+$tertinary: rgb(237, 117, 143);
+$success: rgb(90, 202, 117);
+$warning: rgb(255, 143, 57);
+$error: rgb(218, 20, 20);
+
+/* Grayscale */
+$black: rgb(51, 51, 51);
+$darkGrey: rgb(115, 115, 115);
+$grey: rgb(172, 184, 188);
+$lightGrey: rgb(241, 241, 241);
+$white: rgb(255, 255, 255);
+
+/* Color */
+$blue: rgb(28, 88, 152);
+$faintBlue: rgba(28, 88, 152, 0.05);
+$green: rgb(89, 191, 40);
+$orange: rgb(254, 122, 36);
+$red: rgb(250, 25, 49);
+$peach: rgb(255, 221, 204);
+$olive: rgb(32, 203, 154);
+
+$boxShadowGrey: rgba(11, 9, 44, 0.2);
+
+:export {
+  black: $black;
+  blue: $blue;
+  boxShadowGrey: $boxShadowGrey;
+  darkGrey: $darkGrey;
+  error: $error;
+  faintBlue: $faintBlue;
+  green: $green;
+  grey: $grey;
+  lightGrey: $lightGrey;
+  olive: $olive;
+  orange: $orange;
+  peach: $peach;
+  primary: $primary;
+  red: $red;
+  secondary: $secondary;
+  success: $success;
+  tertinary: $tertinary;
+  warning: $warning;
+  white: $white;
+}

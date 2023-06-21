@@ -1,0 +1,36 @@
+.container {
+  @include container();
+}
+
+.leftContainer {
+  @include sidebarContainer();
+
+  .formContainer {
+    @include formContainer();
+  }
+}
+
+.rightContainer {
+  @include backgroundImageContainer('images/login-background.png');
+  width: 70vw;
+  min-width: calc(100vw - 400px);
+  height: 100%;
+}
+
+.loginDivider {
+  background-color: $lightGrey;
+  height: 1px;
+  margin: 30px auto;
+  width: 100%;
+}
+
+.signUpContainer {
+  @include paragraphContainer();
+}
+
+.signUpButton {
+  background: none;
+  color: $grey;
+  line-height: 0;
+  min-width: 0;
+}
