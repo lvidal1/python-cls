@@ -6,6 +6,7 @@ import Header from './header'
 import Input from './input'
 import Modal, { modalEvents, } from './modal'
 import RadioInput from './radio-input'
+import NotificationCounter from './notification-counter'
 
 export {
   Anchor,
@@ -17,6 +18,7 @@ export {
   RadioInput,
   Modal,
   modalEvents,
+  NotificationCounter,
 }
 
 export default {}

@@ -4,8 +4,8 @@ import { connect, } from 'react-redux'
 import { withRouter, } from 'react-router'
 import { Dispatch, } from 'redux'
 
-import { SecondaryButton, } from '@/components'
-import { ActionCreators,StoreState, } from '@/redux'
+import { SecondaryButton, NotificationCounter, } from '@/components'
+import { ActionCreators, StoreState, } from '@/redux'
 import selectors from '@/selectors'
 
 import Strings, { Images, } from '../../constants'
@@ -23,12 +23,15 @@ export const Header = ({ user, logOut, }: Props) => (
       <h2>{Strings.general.clearsummit}</h2>
     </div>
     <div className={styles.buttons}>
+      <NotificationCounter />
       {user?.id ?
-        <SecondaryButton
-          ariaLabel={Strings.login.logout}
-          title={Strings.login.logout}
-          onClick={logOut}
-        />
+        <>
+          <SecondaryButton
+            ariaLabel={Strings.login.logout}
+            title={Strings.login.logout}
+            onClick={logOut}
+          />
+        </>
         : null
       }
     </div>
