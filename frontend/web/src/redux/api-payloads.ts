@@ -1,4 +1,4 @@
-import { User, } from '@challenge/models'
+import { User, Notification, } from '@challenge/models'
 import { ApiPayload, } from '@clearsummit/radio-dispatch'
 
 import services, { endpoints, } from '@/helpers/services'
@@ -23,6 +23,10 @@ export interface SignUpResponse {
   data?: { user: User}
   details?: string
   statusCode: number,
+}
+
+export interface GetNotificationsResponse {
+  data?: { notifications: Notification[]}
 }
 
 export const loginPayload = (data: LoginPayload): ApiPayload<typeof services, LoginPayload> => ({

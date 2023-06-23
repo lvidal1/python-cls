@@ -1,9 +1,11 @@
 import BaseModel from './base-model'
 import mappers from './mappers'
 import User from './user'
+import Notification from './notification'
 
 const models = {
   User,
+  Notification,
   ...mappers,
 }
 
@@ -32,6 +34,6 @@ export function modelMapper(responseType: string, data: Object) {
   return data
 }
 
-export { User }
+export { User, Notification }
 
 export default models

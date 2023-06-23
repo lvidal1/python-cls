@@ -9,6 +9,8 @@ const SIGNUP_URL = '/accounts/signup/'
 const ME_URL = '/accounts/me/'
 const LOGOUT_USER_URL = 'accounts/logout/'
 
+const NOTIFICATIONS_URL = 'https://clearsummit-challenge.s3.amazonaws.com/mocks/notifications.json'
+
 const axiosAdaptor = async (fn: (args: APIRequestArgs) => Promise<any>, args: any) => {
   console.log(fn)
   let resp
@@ -50,6 +52,8 @@ const ApiServices = () => {
 
   const logoutUser = () => Api.post({ url: LOGOUT_USER_URL, payload: { refresh: ApiService?.authToken?.refresh, }, })
 
+  const getNotifications = () => Api.get({ url: NOTIFICATIONS_URL, responseType: ModelTypes.Notification, })
+
   return {
     getNextPage,
     login,
@@ -57,6 +61,7 @@ const ApiServices = () => {
     me,
     updateMe,
     logoutUser,
+    getNotifications
   }
 }
 
