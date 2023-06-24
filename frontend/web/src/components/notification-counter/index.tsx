@@ -1,8 +1,29 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import { ApiPayload, reduxSet as apiAC, } from '@clearsummit/radio-dispatch'
+import { connect, } from 'react-redux'
+import { Dispatch, } from 'redux'
+
+import services, { endpoints, } from '@/helpers/services'
+import { getNotificationPayload, } from '@/redux/api-payloads'
 
 import styles from './styles.scss'
+import { makeRequest } from '@clearsummit/radio-dispatch/lib/api-redux'
 
-const NotificationCounter = () => {
+
+interface DispatchToProps {
+  /** Dispatch request payload */
+  makeRequest: (payload: ApiPayload<typeof services>) => void,
+}
+
+type Props = DispatchToProps
+
+const NotificationCounter = (props: Props) => {
+  const { makeRequest, } = props
+
+  useEffect(() => {
+    const payload = getNotificationPayload({ count: 3 })
+    makeRequest(payload)
+  })
 
   const notifications: any = [{
     "id": "3",
@@ -28,5 +49,11 @@ const NotificationCounter = () => {
   )
 }
 
+const mapStateToProps = () => ({})
 
-export default NotificationCounter
+const mapDispatchToProps = (dispatch: Dispatch) => ({
+  makeRequest: (payload: ApiPayload<typeof services, unknown>) => dispatch(apiAC.makeRequest.dispatch(payload)),
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(NotificationCounter)
+
