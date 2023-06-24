@@ -45,7 +45,7 @@ const logOut = (state: UserStoreState): UserStoreState => ({
 
 const getNotificationsSuccess = (state: UserStoreState, payload: GetNotificationsResponse) => ({
   ...state,
-  notifications: payload.data.notifications,
+  notifications: payload.data.notification,
 })
 
 
@@ -71,6 +71,10 @@ export const reduxSet = {
   logOut: dispatchReducer<UserStoreState, null>(
     ACTIONS.LOGOUT,
     logOut
+  ),
+  getNotificationsSuccess: dispatchReducer<UserStoreState, GetNotificationsResponse>(
+    ACTIONS.GET_NOTIFICATIONS,
+    getNotificationsSuccess
   ),
 }
 

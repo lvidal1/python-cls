@@ -30,7 +30,6 @@ const Api = {
   put: (arg: APIRequestArgs) => axiosAdaptor(ApiService.put, arg),
   patch: (arg: APIRequestArgs) => axiosAdaptor(ApiService.patch, arg),
   delete: (arg: APIRequestArgs) => axiosAdaptor(ApiService.delete, arg),
-
 }
 
 /**
