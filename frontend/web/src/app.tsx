@@ -12,6 +12,7 @@ import App from '@/screens'
 import Homepage from '@/screens/home'
 import Login from '@/screens/login'
 import SignUp from '@/screens/sign-up'
+import Notifications from '@/screens/notifications'
 
 // Normalize must load first or it will overwrite our styles
 require('normalize.css/normalize.css')
@@ -25,6 +26,7 @@ const routes = (
         <Route path={Routes.Login} exact component={Login} />
         <Route path={Routes.SignUp} exact component={SignUp} />
         <Route path={Routes.Home} component={Homepage} />
+        <Route path={Routes.Notifications} component={Notifications} />
       </App>
     </ConnectedRouter>
   </Provider>

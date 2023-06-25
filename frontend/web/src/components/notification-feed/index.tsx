@@ -1,35 +1,50 @@
-import React from 'react'
-// import NotificationCard from "./notification-card"
+import React, { useEffect } from 'react'
+import { ApiPayload, reduxSet as apiAC, } from '@clearsummit/radio-dispatch'
+import { Notification, } from '@challenge/models'
+import { connect, } from 'react-redux'
+import { Dispatch, } from 'redux'
+import services from '@/helpers/services'
+import { StoreState, } from '@/redux'
+import { getNotificationPayload, } from '@/redux/api-payloads'
+import selectors from '@/selectors'
 
-const NotificationFeed = () => {
+import styles from './styles.scss'
+import NotificationCard from './notification-card'
 
-  const notifications: any = [{
-    "id": "3",
-    "created_at": "2022-01-14T21:38:19.948287Z",
-    "seen": false,
-    "type": "alert"
-  },
-  {
-    "id": "2",
-    "created_at": "2022-01-14T21:38:02.821390Z",
-    "seen": false,
-    "type": "alert"
-  },
-  {
-    "id": "1",
-    "created_at": "2022-01-14T21:37:56.138788Z",
-    "seen": false,
-    "type": "welcome"
-  }]
+
+interface NotificationProps {
+  notifications: Notification[]
+}
+
+interface DispatchToProps {
+  makeRequest: (payload: ApiPayload<typeof services>) => void,
+}
+
+type Props = NotificationProps & DispatchToProps
+
+const NotificationFeed = (props: Props) => {
+  const { makeRequest, notifications } = props
+
+  useEffect(() => {
+    const payload = getNotificationPayload({ count: 3 })
+    makeRequest(payload)
+  }, [])
 
   return (
     <div>
-      {notifications?.length}
-      {/* {notifications.map((notification: any) => (
+      {notifications && notifications.map((notification: any) => (
         <NotificationCard key={notification.id} notification={notification} />
-      ))} */}
+      ))}
     </div>
   )
 }
 
-export default NotificationFeed
+const mapStateToProps = (state: StoreState) => ({
+  notifications: selectors.user.getNotifications(state),
+})
+
+const mapDispatchToProps = (dispatch: Dispatch) => ({
+  makeRequest: (payload: ApiPayload<typeof services, unknown>) => dispatch(apiAC.makeRequest.dispatch(payload)),
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(NotificationFeed)

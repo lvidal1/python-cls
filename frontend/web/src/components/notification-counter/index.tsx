@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react'
 import { ApiPayload, reduxSet as apiAC, } from '@clearsummit/radio-dispatch'
 import { Notification, } from '@challenge/models'
-
 import { connect, } from 'react-redux'
 import { Dispatch, } from 'redux'
 import services from '@/helpers/services'
