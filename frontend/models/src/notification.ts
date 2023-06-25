@@ -1,5 +1,5 @@
 import BaseModel from './base-model'
-import { defaultObject, defaultString , defaultBoolean } from './defaults'
+import { defaultString , defaultBoolean } from './defaults'
 
 export type NotificationDataType = {
   id: string | null | undefined;
@@ -34,7 +34,7 @@ export default class Notification extends BaseModel {
     this.id = defaultString(data.id)
     this.type = defaultString(data.type)
     this.seen = defaultBoolean(data.seen)
-    this.created_at = defaultObject(data.created_at)
+    this.created_at = defaultString(data.created_at)
   }
 
 }
