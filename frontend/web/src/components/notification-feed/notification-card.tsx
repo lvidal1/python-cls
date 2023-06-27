@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react'
+import React from 'react'
 import { Notification, NOTIFICATION_TYPE_WELCOME, NOTIFICATION_TYPE_ALERT, } from '@challenge/models';
 
 import styles from './styles.scss'
