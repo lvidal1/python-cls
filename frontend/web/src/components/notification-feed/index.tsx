@@ -1,11 +1,7 @@
-import React, { useEffect } from 'react'
-import { ApiPayload, reduxSet as apiAC, } from '@clearsummit/radio-dispatch'
+import React from 'react'
 import { Notification, } from '@challenge/models'
 import { connect, } from 'react-redux'
-import { Dispatch, } from 'redux'
-import services from '@/helpers/services'
 import { StoreState, } from '@/redux'
-import { getNotificationPayload, } from '@/redux/api-payloads'
 import selectors from '@/selectors'
 
 import NotificationCard from './notification-card'
@@ -16,19 +12,10 @@ interface NotificationProps {
   notifications: Notification[]
 }
 
-interface DispatchToProps {
-  makeRequest: (payload: ApiPayload<typeof services>) => void,
-}
-
-type Props = NotificationProps & DispatchToProps
+type Props = NotificationProps
 
 const NotificationFeed = (props: Props) => {
-  const { makeRequest, notifications } = props
-
-  useEffect(() => {
-    const payload = getNotificationPayload({ count: 3 })
-    makeRequest(payload)
-  }, [])
+  const { notifications } = props
 
   return (
     <div className={styles.cards}>
@@ -43,8 +30,4 @@ const mapStateToProps = (state: StoreState) => ({
   notifications: selectors.user.getNotifications(state),
 })
 
-const mapDispatchToProps = (dispatch: Dispatch) => ({
-  makeRequest: (payload: ApiPayload<typeof services, unknown>) => dispatch(apiAC.makeRequest.dispatch(payload)),
-})
-
-export default connect(mapStateToProps, mapDispatchToProps)(NotificationFeed)
+export default connect(mapStateToProps)(NotificationFeed)
