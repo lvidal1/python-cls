@@ -1,7 +1,7 @@
 import BaseModel from './base-model'
 import mappers from './mappers'
 import User from './user'
-import Notification from './notification'
+import Notification, {NOTIFICATION_TYPE_WELCOME, NOTIFICATION_TYPE_ALERT, } from './notification'
 
 const models = {
   User,
@@ -34,6 +34,6 @@ export function modelMapper(responseType: string, data: Object) {
   return data
 }
 
-export { User, Notification }
+export { User, Notification ,NOTIFICATION_TYPE_WELCOME , NOTIFICATION_TYPE_ALERT }
 
 export default models

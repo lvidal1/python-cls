@@ -8,8 +8,8 @@ import { StoreState, } from '@/redux'
 import { getNotificationPayload, } from '@/redux/api-payloads'
 import selectors from '@/selectors'
 
-import styles from './styles.scss'
 import NotificationCard from './notification-card'
+import styles from './styles.scss'
 
 
 interface NotificationProps {
@@ -31,7 +31,7 @@ const NotificationFeed = (props: Props) => {
   }, [])
 
   return (
-    <div>
+    <div className={styles.cards}>
       {notifications && notifications.map((notification: any) => (
         <NotificationCard key={notification.id} notification={notification} />
       ))}

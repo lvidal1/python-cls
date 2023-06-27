@@ -1,6 +1,9 @@
 import BaseModel from './base-model'
 import { defaultString , defaultBoolean } from './defaults'
 
+export const NOTIFICATION_TYPE_WELCOME = "welcome";
+export const NOTIFICATION_TYPE_ALERT = "alert";
+
 export type NotificationDataType = {
   id: string | null | undefined;
   created_at: string | null | undefined;
@@ -9,8 +12,8 @@ export type NotificationDataType = {
 };
 
 type NotificationTypeValues = {
-  welcome: string;
-  alert: string;
+  [NOTIFICATION_TYPE_WELCOME]: string;
+  [NOTIFICATION_TYPE_ALERT]: string;
 };
 
 export default class Notification extends BaseModel {
