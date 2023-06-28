@@ -8,6 +8,7 @@ export const Routes = {
   Login: '/',
   Home: '/home',
   SignUp: '/signup',
+  Notifications: '/notifications',
 }
 
 export const Images = {

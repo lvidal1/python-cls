@@ -1,6 +1,6 @@
 import { dispatchReducer, runReducers, } from '@clearsummit/radio-dispatch'
 
-import { SignUpResponse, } from '@/redux/api-payloads'
+import { SignUpResponse, GetNotificationsResponse, } from '@/redux/api-payloads'
 
 import { UserStoreState, } from './index.ts'
 
@@ -13,12 +13,14 @@ export const ACTIONS = {
   END_REQUEST: 'USER/END_REQUEST',
   FAILURE_CREATE_USER: 'FAILURE_CREATE_USER',
   LOGOUT: 'LOGOUT',
+  GET_NOTIFICATIONS: 'GET_NOTIFICATIONS',
 }
 
 export const INITIAL_STATE: UserStoreState = {
   user: null,
   pending: false,
   error: null,
+  notifications: []
 }
 
 const loginSuccess = (state: UserStoreState, payload: SignUpResponse) => ({
@@ -39,6 +41,11 @@ const signUpFailure = (state: UserStoreState, payload: SignUpResponse) => ({
 const logOut = (state: UserStoreState): UserStoreState => ({
   ...state,
   user: null,
+})
+
+const getNotificationsSuccess = (state: UserStoreState, payload: GetNotificationsResponse) => ({
+  ...state,
+  notifications: payload.data.notification,
 })
 
 
@@ -65,9 +72,10 @@ export const reduxSet = {
     ACTIONS.LOGOUT,
     logOut
   ),
+  getNotificationsSuccess: dispatchReducer<UserStoreState, GetNotificationsResponse>(
+    ACTIONS.GET_NOTIFICATIONS,
+    getNotificationsSuccess
+  ),
 }
 
-export const reducer = (
-  state: UserStoreState = { ...INITIAL_STATE, },
-  action: StandardAction
-): UserStoreState => runReducers(state, action, reduxSet)
+export const reducer = ( state: UserStoreState = { ...INITIAL_STATE, }, action: StandardAction): UserStoreState => runReducers(state, action, reduxSet)

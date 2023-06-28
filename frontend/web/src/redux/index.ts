@@ -1,4 +1,4 @@
-import { User, } from '@challenge/models'
+import { User, Notification, } from '@challenge/models'
 import { createApiReducer, reduxSet as apiAC, } from '@clearsummit/radio-dispatch'
 import { connectRouter, routerMiddleware, } from 'connected-react-router'
 import { applyMiddleware,combineReducers, compose, createStore, } from 'redux'
@@ -17,6 +17,7 @@ export interface UserStoreState {
   user: User | null
   pending: boolean
   error: string | null
+  notifications : Notification[]
 }
 
 export interface StoreState {
@@ -76,7 +77,7 @@ const configureStore = (initialState: StoreState = InitialState) => {
       )
     }
   }
-  
+
   const store = createStore(reducers, initialState, middleware)
   sagaMiddleware.run(rootSaga)
 

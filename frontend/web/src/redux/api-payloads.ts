@@ -1,4 +1,4 @@
-import { User, } from '@challenge/models'
+import { User, Notification, } from '@challenge/models'
 import { ApiPayload, } from '@clearsummit/radio-dispatch'
 
 import services, { endpoints, } from '@/helpers/services'
@@ -25,9 +25,23 @@ export interface SignUpResponse {
   statusCode: number,
 }
 
+export interface GetNotificationsPayload {
+  count?: number,
+}
+
+export interface GetNotificationsResponse {
+  data?: { notification: Notification[]}
+}
+
 export const loginPayload = (data: LoginPayload): ApiPayload<typeof services, LoginPayload> => ({
   serviceKey: endpoints.login,
   successActionCreator: AC.user.loginSuccess.dispatch,
+  data,
+})
+
+export const getNotificationPayload = (data: GetNotificationsPayload): ApiPayload<typeof services, GetNotificationsPayload> => ({
+  serviceKey: endpoints.getNotifications,
+  successActionCreator: AC.user.getNotificationsSuccess.dispatch,
   data,
 })
 

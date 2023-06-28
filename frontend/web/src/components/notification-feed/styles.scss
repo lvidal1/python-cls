@@ -1,0 +1,48 @@
+$size: 3rem;
+
+.cards {
+  display: flex;
+  flex-direction: column;
+}
+
+
+.card {
+  display: flex;
+  padding: 1.5rem 2rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+  border-radius: 0.2rem;
+  border: 1px solid $faintBlue;
+  margin-bottom: 0.5rem;
+  background-color: $white;
+  align-items: center;
+  cursor: pointer;
+  &:hover,&:focus{
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  }
+}
+
+.title{
+  color:$black;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 0.2rem;
+}
+
+.badge{
+  width: $size;
+  height:$size;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &--welcome{
+    background-color: $green;
+  }
+  &--alert{
+    background-color: $red;
+  }
+  span {
+    color: white;
+  }
+}
